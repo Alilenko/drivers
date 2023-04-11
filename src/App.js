@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useAuth } from "./hooks/useAuth";
 import {
   createBrowserRouter,
@@ -20,9 +20,11 @@ import Spinner from "./components/Spinner/Spinner";
 
 export const PrivateRoute = ({ children }) => {
   const user = useAuth();
-  return typeof user === "undefined" ? (
+  useEffect(() => {}, [user]);
+
+  return typeof user.currentUser === "undefined" ? (
     <Spinner />
-  ) : user ? (
+  ) : user?.currentUser ? (
     children
   ) : (
     <Navigate to="/login" />
@@ -31,7 +33,9 @@ export const PrivateRoute = ({ children }) => {
 
 export const AdminPrivateRoute = ({ children }) => {
   const user = useAuth();
-  return typeof user === "undefined" ? (
+
+  useEffect(() => {}, [user]);
+  return typeof user.currentUser === "undefined" ? (
     <Spinner />
   ) : user ? (
     user?.currentUser?.email === "test@gmail.com" ? (
