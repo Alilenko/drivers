@@ -47,30 +47,30 @@ export const AdminPrivateRoute = ({ children }) => {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="signup" element={<SignUpScreen />}></Route>
-      <Route path="login" element={<LoginScreen />}></Route>
-      <Route path="phone" element={<PhoneLogin />}></Route>
+      <Route path="drivers/signup" element={<SignUpScreen />}></Route>
+      <Route path="drivers/login" element={<LoginScreen />}></Route>
+      <Route path="drivers/phone" element={<PhoneLogin />}></Route>
       <Route
-        path="/"
+        path="drivers/"
         element={
           <PrivateRoute>
             <RootLayout />
           </PrivateRoute>
         }
       >
-        <Route path="/" element={<MainScreen />} />
-        <Route path="profile" element={<ProfileScreen />} />
-        <Route path="create" element={<CreateTrip />} />
+        <Route path="drivers/" element={<MainScreen />} />
+        <Route path="drivers/profile" element={<ProfileScreen />} />
+        <Route path="drivers/create" element={<CreateTrip />} />
       </Route>
       <Route
-        path="admin"
+        path="drivers/admin"
         element={
           <AdminPrivateRoute>
             <RootLayout />
           </AdminPrivateRoute>
         }
       >
-        <Route path="admin" element={<AdminPage />} />
+        <Route path="drivers/admin" element={<AdminPage />} />
       </Route>
       <Route path="*" element={<NotFoundPage />}></Route>
     </>
