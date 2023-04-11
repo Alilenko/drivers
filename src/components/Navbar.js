@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
+import { useAuth } from "../hooks/useAuth";
 import { signOut } from "firebase/auth";
 import { GoSignOut } from "react-icons/go";
 import { Collapse, BDiv, Navbar, Nav, Button } from "bootstrap-4-react";
 
 const NavbarComponent = () => {
   const navigate = useNavigate();
+  const user = useAuth();
+  useEffect(() => {}, [user]);
 
   const logout = () => {
     signOut(auth)
@@ -17,6 +20,7 @@ const NavbarComponent = () => {
         console.log(error);
       });
   };
+  console.log(user);
   return (
     <>
       <Navbar light bg="light">
@@ -55,6 +59,18 @@ const NavbarComponent = () => {
                 </Link>
               </Button>
             </Nav.Item>
+            {user?.currentUser?.email === "test@gmail.com" ? (
+              <Nav.Item>
+                <Button light>
+                  <Link
+                    style={{ color: "#000", textDecoration: "none" }}
+                    to="/admin"
+                  >
+                    Admin page
+                  </Link>
+                </Button>
+              </Nav.Item>
+            ) : null}
           </Navbar.Nav>
         </BDiv>
       </Collapse>
