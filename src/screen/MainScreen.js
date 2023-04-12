@@ -3,10 +3,11 @@ import useTrips from "../hooks/useTrips";
 import TripItem from "../components/TripItem";
 
 import { Container, BDiv } from "bootstrap-4-react";
+import Spinner from "../components/Spinner/Spinner";
 
 const MainScreen = () => {
   const [list, setList] = useState([]);
-  const { trips, getTrips } = useTrips();
+  const { trips, getTrips, loading } = useTrips();
 
   useEffect(() => {
     getTrips().then(() => setList(trips));
@@ -16,6 +17,7 @@ const MainScreen = () => {
 
   return (
     <Container>
+      {loading ? <Spinner /> : null}
       <BDiv className="row">
         {list
           .filter((trip) => trip.data.timestamp > today)

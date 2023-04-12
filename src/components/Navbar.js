@@ -26,7 +26,9 @@ const NavbarComponent = () => {
       <Navbar light bg="light">
         <Navbar.Toggler target="#navbarToggleExternalContent" />
         <BDiv pr="4">
-          <GoSignOut onClick={logout} size="25" color="rgb(51, 51, 51, 0.8)" />
+          <Button onClick={logout}>
+            <GoSignOut size="25" color="rgb(51, 51, 51, 0.8)" />
+          </Button>
         </BDiv>
       </Navbar>
       <Collapse id="navbarToggleExternalContent">

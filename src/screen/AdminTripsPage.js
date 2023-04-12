@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
 import useTrips from "../hooks/useTrips";
-import useFirestore from "../hooks/useFirestore";
-import UserItem from "../components/UserItem";
 import TripItem from "../components/TripItem";
 import Spinner from "../components/Spinner/Spinner";
-
-import { Container, BDiv, Button } from "bootstrap-4-react";
 import AdminNavLink from "../components/AdminNavLink";
-import { BsDatabase } from "react-icons/bs";
+import { Container, BDiv } from "bootstrap-4-react";
 
 const AdminTripsPage = () => {
   const [list, setList] = useState([]);
-  const { trips, getTrips } = useTrips();
-  const { items, getUser, loading } = useFirestore();
+  const { trips, getTrips, loading } = useTrips();
   const [update, setUpdate] = useState(false);
   const today = Date.now();
 

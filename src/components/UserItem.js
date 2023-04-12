@@ -31,8 +31,8 @@ const UserItem = ({ item, setUpdate, update }) => {
   };
 
   return (
-    <BDiv className="col-12 col-md-6 col-lg-3 mt-4">
-      <Card.Body text="center" shadow style={{ minHeight: "300px" }}>
+    <BDiv className="col-12 col-md-6 col-lg-3 mt-4 hover">
+      <Card.Body text="center " shadow style={{ minHeight: "300px" }}>
         {role === "user" ? (
           <FaUserAlt size="35px" className="mb-3 mt-3" />
         ) : (

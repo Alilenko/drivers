@@ -7,7 +7,11 @@ const FormContainer = ({ children, update }) => {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      style={update ? { height: "auto" } : { height: "100vh" }}
+      style={
+        update
+          ? { height: "auto", position: "relative" }
+          : { height: "100vh", position: "relative" }
+      }
     >
       {children}
     </BDiv>

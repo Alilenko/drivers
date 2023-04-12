@@ -20,7 +20,6 @@ const Toast = ({ text, active }) => {
         role="alert"
         aria-live="assertive"
         aria-atomic="true"
-        shadow
       >
         <div className="toast-body">{text}</div>
       </div>

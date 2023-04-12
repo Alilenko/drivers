@@ -6,7 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  position: relative;
 }
 
 code {
@@ -14,6 +13,10 @@ code {
     monospace;
 }
 .word {
-  //word-break: break-all;
   word-wrap: break-word;
+}
+.hover:hover {
+  transition: all 0.5s ease;
+  transform: scale(1.03);
+  cursor: pointer;
 }

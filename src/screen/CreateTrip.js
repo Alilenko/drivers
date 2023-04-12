@@ -59,27 +59,15 @@ const CreateTrip = () => {
       })
       .catch((error) => console.log(error));
   };
-  /*const onClick = () => {
-    setActive(true);
-    setTimeout(() => setActive(false), 2000);
-  };*/
 
   return (
     <FormContainer update={true}>
       {loading ? <Spinner /> : null}
-
       <Toast text="New trip created!" active={active} setActive={setActive} />
-      <Card
-        shadow
-        bg="light"
-        rounded
-        style={{ maxWidth: "500px" }}
-        className="m-5"
-      >
+      <Card bg="light" rounded style={{ maxWidth: "500px" }} className="m-5">
         <Card.Header>
           <div className="text-muted h3">Create your trip</div>
         </Card.Header>
-
         <Card.Body>
           <Form onSubmit={createTrip}>
             <Form.Group>

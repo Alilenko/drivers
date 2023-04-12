@@ -4,10 +4,9 @@ import { useAuth } from "../hooks/useAuth";
 import UserForm from "../components/Form";
 import FormContainer from "../components/FormContainer";
 import Spinner from "../components/Spinner/Spinner";
-
-import { Card, Button } from "bootstrap-4-react";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook, BsFillTelephoneFill } from "react-icons/bs";
+import { Card, Button } from "bootstrap-4-react";
 
 const LoginScreen = () => {
   const navigate = useNavigate();

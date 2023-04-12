@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Form, Button } from "bootstrap-4-react";
 
 const UserForm = ({ form, updateInput, submitForm, buttonText }) => {
