@@ -38,9 +38,13 @@ const UserItem = ({ item, setUpdate, update }) => {
         ) : (
           <GiCarSeat size="35px" className="mb-3 mt-3" />
         )}
-        {name ? <h3>{name}</h3> : <h3 className=" text-muted">User Name</h3>}
+        {name ? (
+          <h3 className="word">{name}</h3>
+        ) : (
+          <h3 className=" text-muted">User Name</h3>
+        )}
         {email ? (
-          <BDiv className="mb-2">{email} </BDiv>
+          <BDiv className="mb-2 word">{email} </BDiv>
         ) : (
           <BDiv className="mb-2 text-muted">User email</BDiv>
         )}
