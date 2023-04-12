@@ -3,6 +3,7 @@ import { useAuth } from "../hooks/useAuth";
 import useFirestore from "../hooks/useFirestore";
 import FormContainer from "../components/FormContainer";
 import Spinner from "../components/Spinner/Spinner";
+import Toast from "../components/Toast";
 
 import { Card, Button, Form } from "bootstrap-4-react";
 
@@ -17,6 +18,7 @@ const ProfileScreen = () => {
   const [loading, setLoading] = useState(false);
   const { currentUser } = useAuth();
   const { getUser, updateUserData } = useFirestore();
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -50,12 +52,16 @@ const ProfileScreen = () => {
         phoneNumber: form.phone,
         role: form.role,
         id: form.id,
+      }).then(() => {
+        setActive(true);
+        setTimeout(() => setActive(false), 2000);
       });
     }
   };
 
   return (
     <FormContainer update={true}>
+      <Toast text="User data updated!" active={active} setActive={setActive} />
       <Card
         shadow
         bg="light"
