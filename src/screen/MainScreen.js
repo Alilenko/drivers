@@ -16,16 +16,11 @@ const MainScreen = () => {
 
   return (
     <Container>
-      <BDiv
-        display="flex"
-        justifyContent="center"
-        mt="2"
-        style={{ flexWrap: "wrap", gap: "20px" }}
-      >
+      <BDiv className="row">
         {list
           .filter((trip) => trip.data.timestamp > today)
           .sort(function (a, b) {
-            return a.timestamp - b.timestamp;
+            return a.data.timestamp - b.data.timestamp;
           })
           .map((item) => (
             <TripItem key={item.id} item={item} />

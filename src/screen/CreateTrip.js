@@ -7,7 +7,8 @@ import { v4 as uuidv4 } from "uuid";
 import Spinner from "../components/Spinner/Spinner";
 import FormContainer from "../components/FormContainer";
 
-import { BDiv, Card, Button, Form } from "bootstrap-4-react";
+import { BDiv, Card, Button, Form, Alert } from "bootstrap-4-react";
+import Toast from "../components/Toast";
 
 const CreateTrip = () => {
   const [form, setForm] = useState({
@@ -20,12 +21,13 @@ const CreateTrip = () => {
     carNumber: "",
     time: "",
     date: "",
-    seats: 0,
+    seats: "",
   });
   const { currentUser } = useAuth();
   const { getCurrentUserFromFirestore } = useFirestore();
   const { addNewTrip, loading } = useTrips();
   const navigate = useNavigate();
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     getCurrentUserFromFirestore(currentUser, form, setForm);
@@ -38,13 +40,35 @@ const CreateTrip = () => {
   const createTrip = (e) => {
     e.preventDefault();
     const uid = uuidv4();
-    addNewTrip(uid, form);
-    navigate("/");
+    addNewTrip(uid, form)
+      .then(() => {
+        setActive(true);
+        setTimeout(() => setActive(false), 2000);
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          from: "",
+          to: "",
+          carModel: "",
+          carNumber: "",
+          time: "",
+          date: "",
+          seats: "",
+        });
+      })
+      .catch((error) => console.log(error));
   };
+  /*const onClick = () => {
+    setActive(true);
+    setTimeout(() => setActive(false), 2000);
+  };*/
 
   return (
     <FormContainer update={true}>
       {loading ? <Spinner /> : null}
+
+      <Toast text="New trip created!" active={active} setActive={setActive} />
       <Card
         shadow
         bg="light"

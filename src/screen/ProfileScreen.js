@@ -49,7 +49,6 @@ const ProfileScreen = () => {
         name: form.name,
         phoneNumber: form.phone,
         role: form.role,
-        imgUrl: form.imgUrl,
         id: form.id,
       });
     }

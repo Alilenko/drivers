@@ -6,21 +6,25 @@ import { Button, BDiv, Card } from "bootstrap-4-react";
 import { AiFillCar } from "react-icons/ai";
 import { BsArrowRight, BsTrashFill } from "react-icons/bs";
 
-const TripItem = ({ item, admin }) => {
+const TripItem = ({ item, admin, update, setUpdate }) => {
   const { deleteTrips } = useTrips();
   const { name, from, to, time, timestamp, carModel, seats } = item.data;
 
+  const deleteTrip = () => {
+    deleteTrips(item.id).then(() => setUpdate(!update));
+  };
+
   return (
-    <BDiv className="col-12 col-md-4" shadow p="4" rounded>
-      <AiFillCar className="col" size="70px" />
-      <Card.Body className=" text-center">
-        <Card.Title className="card-title">
+    <BDiv className="col-12 col-md-6 col-lg-3 mt-4">
+      <Card.Body className=" text-center" shadow>
+        <AiFillCar className="col" size="70px" />
+        <Card.Title className="card-title word">
           <strong>{name}</strong>
         </Card.Title>
-        <BDiv className="row font-weight-bold m-3 text-muted">
-          <BDiv className="col">{from}</BDiv>
+        <BDiv className="row font-weight-bold text-muted">
+          <BDiv className="col word">{from}</BDiv>
           <BsArrowRight className="col" />
-          <BDiv className="col">{to}</BDiv>
+          <BDiv className="col word">{to}</BDiv>
         </BDiv>
         <BDiv className="row">
           <BDiv className="col">
@@ -30,7 +34,7 @@ const TripItem = ({ item, admin }) => {
             <h5>{time}</h5>{" "}
           </BDiv>
         </BDiv>
-        <BDiv className="font-weight-bold"> {carModel}</BDiv>
+        <BDiv className="font-weight-bold word"> {carModel}</BDiv>
         <BDiv className=" text-muted">Number of seats: {seats}</BDiv>
 
         {admin ? (
@@ -39,7 +43,7 @@ const TripItem = ({ item, admin }) => {
             lg
             w="100"
             className="mt-3"
-            onClick={() => deleteTrips(item.id)}
+            onClick={() => deleteTrip()}
           >
             <BsTrashFill size="20px" />
           </Button>

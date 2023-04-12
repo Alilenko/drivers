@@ -20,7 +20,7 @@ const NavbarComponent = () => {
         console.log(error);
       });
   };
-  console.log(user);
+
   return (
     <>
       <Navbar light bg="light">
@@ -64,7 +64,7 @@ const NavbarComponent = () => {
                 <Button light>
                   <Link
                     style={{ color: "#000", textDecoration: "none" }}
-                    to="/admin"
+                    to="/admin/user"
                   >
                     Admin page
                   </Link>

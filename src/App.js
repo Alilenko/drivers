@@ -15,6 +15,7 @@ import PhoneLogin from "./screen/PhoneLogin";
 import RootLayout from "./screen/RootLayout";
 import ProfileScreen from "./screen/ProfileScreen";
 import AdminPage from "./screen/AdminPage";
+import AdminTripsPage from "./screen/AdminTripsPage";
 import NotFoundPage from "./screen/NotFoundPage";
 import Spinner from "./components/Spinner/Spinner";
 
@@ -74,7 +75,8 @@ const router = createBrowserRouter(
           </AdminPrivateRoute>
         }
       >
-        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin/user" element={<AdminPage />} />
+        <Route path="/admin/trips" element={<AdminTripsPage />} />
       </Route>
       <Route path="*" element={<NotFoundPage />}></Route>
     </>

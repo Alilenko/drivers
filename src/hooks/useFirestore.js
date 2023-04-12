@@ -52,7 +52,6 @@ const useFirestore = () => {
     const find = items.filter((item) => item.data.uid === uid);
     if (find.length > 0) {
       const userDoc = doc(db, "users", id);
-      console.log(userDoc);
       const update = await updateDoc(userDoc, {
         email: email || "",
         name: name || "",
