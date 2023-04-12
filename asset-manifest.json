@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/drivers/static/css/main.e6c13ad2.css",
-    "main.js": "/drivers/static/js/main.178baa08.js",
+    "main.css": "/drivers/static/css/main.8b202a15.css",
+    "main.js": "/drivers/static/js/main.92fb6386.js",
     "static/media/spinner.svg": "/drivers/static/media/spinner.e5d907fa7a56c998a5ee8cbf527a2345.svg",
     "index.html": "/drivers/index.html",
-    "main.e6c13ad2.css.map": "/drivers/static/css/main.e6c13ad2.css.map",
-    "main.178baa08.js.map": "/drivers/static/js/main.178baa08.js.map"
+    "main.8b202a15.css.map": "/drivers/static/css/main.8b202a15.css.map",
+    "main.92fb6386.js.map": "/drivers/static/js/main.92fb6386.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.178baa08.js"
+    "static/css/main.8b202a15.css",
+    "static/js/main.92fb6386.js"
   ]
 }
