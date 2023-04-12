@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/drivers/static/css/main.9197721a.css",
-    "main.js": "/drivers/static/js/main.605ee016.js",
+    "main.js": "/drivers/static/js/main.35d16ede.js",
     "static/media/spinner.svg": "/drivers/static/media/spinner.e5d907fa7a56c998a5ee8cbf527a2345.svg",
     "index.html": "/drivers/index.html",
     "main.9197721a.css.map": "/drivers/static/css/main.9197721a.css.map",
-    "main.605ee016.js.map": "/drivers/static/js/main.605ee016.js.map"
+    "main.35d16ede.js.map": "/drivers/static/js/main.35d16ede.js.map"
   },
   "entrypoints": [
     "static/css/main.9197721a.css",
-    "static/js/main.605ee016.js"
+    "static/js/main.35d16ede.js"
   ]
 }
