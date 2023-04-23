@@ -32,7 +32,12 @@ const UserItem = ({ item, setUpdate, update }) => {
 
   return (
     <BDiv className="col-12 col-md-6 col-lg-3 mt-4 hover">
-      <Card.Body text="center " shadow style={{ minHeight: "300px" }}>
+      <Card.Body
+        text="center"
+        className="h-100 "
+        shadow
+        style={{ minHeight: "300px" }}
+      >
         {role === "user" ? (
           <FaUserAlt size="35px" className="mb-3 mt-3" />
         ) : (
@@ -75,16 +80,18 @@ const UserItem = ({ item, setUpdate, update }) => {
             <Form.CheckLabel htmlFor="driver">Driver</Form.CheckLabel>
           </Form.Check>
         </Form.Group>
-        <Button
-          onClick={handleClick}
-          type="submit"
-          className="mb-3"
-          w="100"
-          warning
-          lg
-        >
-          Update profile
-        </Button>
+        <div style={{ flex: "1 0 auto" }}>
+          <Button
+            onClick={handleClick}
+            type="submit"
+            className="mb-3"
+            w="100"
+            warning
+            lg
+          >
+            Update profile
+          </Button>
+        </div>
       </Card.Body>
     </BDiv>
   );
